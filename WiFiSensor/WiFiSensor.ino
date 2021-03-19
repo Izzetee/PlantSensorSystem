@@ -97,7 +97,7 @@ void WiFi_Start()
     Serial.println(WIFI_RETRIES);
     if (conn_tries > WIFI_RETRIES)
     {
-      Serial.print("Restart the WiFiModul due to lack of connection");https://www.youtube.com/feed/history
+      Serial.print("Restart the WiFiModul due to lack of connection");
       WiFi.disconnect();
       WiFi.mode(WIFI_OFF);
       conn_tries = 0;
