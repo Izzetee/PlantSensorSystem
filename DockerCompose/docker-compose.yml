@@ -11,7 +11,7 @@ services:
             - 1433:1433
             - 1434:1434    
     rabbitmq:
-        image: rabbitmq:3.8.11-management
+        build: ./Rabbitmq
         container_name: rabbitmq
         volumes:
             - 'rabbitmq_etc:/etc/rabbitmq/'
