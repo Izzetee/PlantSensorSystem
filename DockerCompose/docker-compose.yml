@@ -1,0 +1,35 @@
+version: "3"
+services:
+    mssql:
+        image: "mcr.microsoft.com/mssql/server:2019-latest"
+        environment:
+            SA_PASSWORD: "<password>"
+            ACCEPT_EULA: "Y" 
+        volumes:
+          - sqlvolume:/var/opt/mssql
+        ports:
+            - 1433:1433
+            - 1434:1434    
+    rabbitmq:
+        image: rabbitmq:3.8.11-management
+        container_name: rabbitmq
+        volumes:
+            - 'rabbitmq_etc:/etc/rabbitmq/'
+            - 'rabbitmq_data:/var/lib/rabbitmq/'
+            - 'rabbitmq_log:/var/log/rabbitmq/'
+        environment:
+            RABBITMQ_DEFAULT_USER: 'admin'
+            RABBITMQ_DEFAULT_PASS: '<password>'
+        ports:
+            - 5672:5672
+            - 15672:15672    
+            - 1883:1883
+    grafana:
+        image: "grafana/grafana"
+        volumes:
+          - grafana-storage:/var/lib/grafana
+        ports:
+            - 3000:3000            
+volumes:
+    sqlvolume:
+    grafana-storage:

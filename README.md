@@ -36,6 +36,7 @@ you can use any other-ish Products, its not a musthave to use the ones above. Mi
 
 # RabbitMQ Config
 - Documentation to be done 
+- you need to enable "MQTT" for RabbitMQ within the enabled_plugins
 - code already there, needs cleanup
 
 # Consumer Service
