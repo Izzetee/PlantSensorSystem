@@ -1,0 +1,11 @@
+version: "2"
+services:
+    grafana:
+        image: "grafana/grafana"
+        volumes:
+          - grafana-storage:/var/lib/grafana
+        ports:
+            - 3000:3000
+            
+volumes:
+  grafana-storage:
